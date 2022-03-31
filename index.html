@@ -7,756 +7,416 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WELD</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h5,
-      h6,
-      p,
-      a {
-        color: #fff;
-        text-align: center;
-        font-family: "Mulish", sans-serif;
-      }
-      a {
-        text-decoration: none;
-      }
-      .main-div {
-        width: 600px;
-        height: 100%;
-        background: url(./images/back-shadow.png) no-repeat;
-        background-color: #000;
-        margin: auto;
-        position: relative;
-      }
-      .main-div::before {
-        position: absolute;
-        background: url(./images/back-shadow.png) no-repeat;
-        width: 630px;
-        height: 1000px;
-      }
-      .banner-logo img {
-        display: flex;
-        margin: auto;
-        padding: 50px 0;
-      }
-      .banner-img {
-        background: url(./images/banner.png) no-repeat;
-        width: 536px;
-        height: 323px;
-        margin: auto;
-      }
-      .banner-img h1 {
-        opacity: 1;
-        font-size: 30px;
-        line-height: 40px;
-        font-weight: 800;
-        padding-top: 40px;
-        padding-bottom: 6px;
-        margin: 0;
-      }
-      .banner-img p {
-        font-size: 14px;
-        line-height: 22px;
-        color: rgba(187, 192, 198, 1);
-        font-weight: 400;
-        margin: 0;
-        padding-bottom: 32px;
-      }
-      .banner-img a {
-        width: 162px;
-        height: 44px;
-        border-radius: 10px;
-        background: linear-gradient(91.81deg, #ff0f00 1.76%, #ff6a6a 98.7%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
-        line-height: 16px;
-        font-weight: 700;
-        margin: auto;
-      }
-      .enroll-sec {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        margin-top: 50px;
-      }
-      .enroll-sec .course h4,
-      .course p {
-        text-align: left;
-      }
-      .course a {
-        width: 87px;
-        height: 23px;
-        background: rgba(255, 106, 106, 1);
-        color: #020c12;
-        font-size: 12px;
-        font-weight: 400;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 4px;
-      }
-      .enroll-sec .course h4 {
-        font-size: 18px;
-        line-height: 34px;
-      }
-      .enroll-sec .course p {
-        font-size: 14px;
-        line-height: 22px;
-        color: rgba(150, 156, 163, 1);
-      }
-      .course a:last-child {
-        font-size: 12px;
-        line-height: 14px;
-        font-weight: 700;
-        background: linear-gradient(91.81deg, #ff0f00 1.76%, #ff6a6a 98.7%);
-        border-radius: 6px;
-        width: 119px;
-        height: 34px;
-      }
-      .enroll-img {
-        width: 280px;
-        height: 248px;
-        border-radius: 12px;
-        border: 1px solid #bbc0c6;
-        background: url(./images/enroll.png) no-repeat center;
-      }
-      .enroll-img a {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-      }
-      .enroll-img a img {
-        width: 60px;
-        height: 60px;
-        margin: auto;
-      }
-      .catagory-sec {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-      }
-      .catagory-top a {
-        color: #020c12;
-        font-size: 12px;
-        font-weight: 400;
-        background: rgba(255, 106, 106, 1);
-        width: 81px;
-        height: 23px;
-        border-radius: 4px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-      }
-      .catagory-top h4 {
-        font-size: 18px;
-        line-height: 34px;
-        font-weight: 700;
-        margin: 0;
-        padding-top: 8px;
-      }
-      .catagory-top p {
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: 400;
-        color: #969ca3;
-        padding-bottom: 10px;
-        margin-top: 5px;
-      }
-      .catagory-grid {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        margin: auto;
-        width: 75%;
-      }
-      .catagory-grid .grid-img {
-        width: 191.15px;
-        height: 155.31px;
-        border-radius: 10px;
-        border: 1px solid rgba(187, 192, 198, 1);
-        margin-bottom: 24px;
-        display: flex;
-      }
-      .grid-one {
-        background: url(./images/fundamental.png) no-repeat center;
-      }
-      .grid-two {
-        background: url(./images/welding.png) no-repeat center;
-      }
-      .grid-three {
-        background: url(./images/tig-welding.png) no-repeat center;
-      }
-      .grid-four {
-        background: url(./images/weldingb.png) no-repeat center;
-      }
-      .grid-img p {
-        font-size: 14px;
-        line-height: 22px;
-        font-weight: 400;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        width: 100%;
-      }
-      .courses-grid {
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        margin: auto;
-      }
-      .c-grid {
-        width: 160px;
-        height: 223px;
-        border-radius: 10px;
-        border: 1px solid rgba(187, 192, 198, 1);
-        margin-bottom: 24px;
-        background: rgba(20, 30, 49, 1);
-      }
-      .c-grid h6 {
-        font-size: 14px;
-        line-height: 18px;
-        font-weight: 700;
-        text-align: left;
-        margin: 0%;
-        padding-top: 15px;
-      }
-      .c-grid p {
-        text-align: left;
-        margin: 0%;
-        font-size: 12px;
-        line-height: 18px;
-        padding: 8px 4px 13px 0;
-      }
-      .c-grid a {
-        font-size: 10px;
-        color: #fff;
-        font-weight: 700;
-        background: linear-gradient(91.81deg, #ff0f00 1.76%, #ff6a6a 98.7%);
-        width: 92px;
-        height: 26px;
-        border-radius: 4px;
-        margin: 0;
-      }
-      .inner-grid {
-        padding-left: 10px;
-      }
-      .enroll-img-b {
-        background: url(./images/certificate.png) no-repeat center;
-        width: 280px;
-        height: 248px;
-        border-radius: 12px;
-        border: 1px solid #bbc0c6;
-      }
-      .course-b a {
-        width: 119px;
-      }
-      .catagory-top-b a {
-        width: 126px;
-      }
-
-      .job-grid {
-        background: rgba(20, 30, 49, 1);
-        width: 254px;
-        height: 92px;
-        border-radius: 8px;
-        border: 1.5px solid rgba(135, 151, 160, 1);
-        margin-bottom: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-      }
-      .jobboard-grid {
-        width: 100%;
-      }
-      .job-grid p {
-        font-size: 12px;
-        margin: 0;
-        text-align: left;
-        padding-bottom: 0%;
-      }
-      .job-grid h6 {
-        margin: 0;
-        text-align: left;
-        font-size: 14px;
-        line-height: 18px;
-      }
-      .global-grid {
-        width: 254px;
-        height: 306px;
-        border-radius: 10px;
-        background: rgba(20, 30, 49, 1);
-        border: 1px solid rgba(187, 192, 198, 1);
-        margin: 0 10px 0 10px;
-      }
-      .global-post {
-        width: 100%;
-        display: flex;
-      }
-      .global-img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10px;
-      }
-      .global-add {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 14px;
-      }
-      .global-add p {
-        font-size: 10px;
-        margin: 0;
-        padding-top: 8px;
-      }
-      .global-text h6,
-      .global-text p {
-        margin: 0;
-        text-align: left;
-        padding: 0 14px;
-      }
-      .global-text h6 {
-        font-size: 14px;
-        line-height: 18px;
-        font-weight: 700;
-        padding-bottom: 13px;
-      }
-      .global-text p {
-        font-size: 12px;
-        line-height: 18px;
-        color: rgba(150, 156, 163, 1);
-      }
-      .global-text a {
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 14px;
-        background: none;
-        color: #ff0f00;
-        text-align: left;
-        margin: 0 5px;
-        padding-top: 18px;
-      }
-      .global-btn a {
-        width: 94px;
-      }
-      .go-big {
-        width: 536px;
-        height: 138px;
-        border-radius: 16px;
-        background: rgba(20, 30, 49, 1);
-        border: 1px solid rgba(187, 192, 198, 1);
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 40px auto;
-      }
-      .go-view a {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 16px;
-        width: 162px;
-        height: 44px;
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(91.81deg, #ff0f00 1.76%, #ff6a6a 98.7%);
-      }
-      .go-big h4,
-      .go-big p {
-        text-align: left;
-      }
-      .go-big p {
-        font-size: 14px;
-        line-height: 22px;
-        color: rgba(187, 192, 198, 1);
-      }
-      .footer {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-      }
-      .footer-left p {
-        color: rgba(150, 156, 163, 1);
-        font-size: 12px;
-        line-height: 18px;
-        text-align: left;
-        padding-left: 27px;
-      }
-      .footer-left {
-        width: 56%;
-      }
-      .footer-right {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        width: 44%;
-        flex-wrap: wrap;
-      }
-      .footer-right p {
-        color: rgba(150, 156, 163, 1);
-        font-size: 14px;
-        line-height: 22px;
-        text-align: left;
-        font-weight: 400;
-        padding-top: 14px;
-        padding-left: 10px;
-        margin: 0;
-      }
-      .footer-icons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .footer-left img {
-        padding-left: 27px;
-      }
-      hr {
-        width: 536px;
-        border: 1px solid rgba(20, 36, 50, 1);
-      }
-      .copywrite p {
-        font-size: 14px;
-        font-weight: 400;
-        color: rgba(150, 156, 163, 1);
-        padding: 5px 0 30px 0;
-      }
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700;800&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+h1,h2,h3,h4,h5, h5, h6,p,
+a {color: #fff; text-align: center; font-family: "Mulish", sans-serif; }
+a {text-decoration: none; }
+.main-div {width: 600px; height: 100%;background: url(./images/back-shadow.png) no-repeat;background-color: #000; margin: auto;position: relative;}
+.main-div::before { position: absolute; background: url(./images/back-shadow.png) no-repeat; width: 630px;  height: 1000px; }
+.banner-logo img { display: flex;  margin: auto;  padding: 50px 0; }
+.banner-img {  background: url(./images/banner.png) no-repeat;width: 536px; height: 323px; margin: auto;  display: flex; justify-content: center; align-items: center;}
+.banner-img h1 {opacity: 1; font-size: 30px; line-height: 40px; font-weight: 800; padding-top: 0px;padding-bottom: 6px;  margin: 0; }
+.banner-img p {font-size: 14px;line-height: 22px; color: rgba(187, 192, 198, 1); font-weight: 400; margin: 0; padding-bottom: 32px; }
+.banner-img a {width: 162px; height: 44px; border-radius: 10px; background: linear-gradient(91.81deg, #ff0f00 1.76%, #ff6a6a 98.7%); display: flex; justify-content: center; align-items: center; font-size: 14px; line-height: 16px; font-weight: 700; margin: auto; }
+.enroll-sec {display: flex; justify-content: space-evenly; align-items: center;margin-top: 50px; }
+.enroll-sec .course h4, .course p { text-align: left; }
+.course a {  width: 87px;  height: 23px;background: rgba(255, 106, 106, 1);color: #020c12;font-size: 12px; font-weight: 400; display: flex; justify-content: center; align-items: center; border-radius: 4px;}
+.enroll-sec .course h4 { font-size: 18px; line-height: 34px;}
+.enroll-sec .course p { font-size: 14px; line-height: 22px; color: rgba(150, 156, 163, 1);}
+.course a:last-child { font-size: 12px; line-height: 14px; font-weight: 700; background: linear-gradient(91.81deg, #ff0f00 1.76%, #ff6a6a 98.7%); border-radius: 6px; width: 119px; height: 34px;}
+.enroll-img { width: 280px; height: 248px; border-radius: 12px; border: 1px solid #bbc0c6; background: url(./images/enroll.png) no-repeat center;}
+.enroll-img a { display: flex; justify-content: center; width: 100%; height: 100%;}
+.enroll-img a img { width: 60px; height: 60px; margin: auto;}
+.catagory-sec { display: flex; justify-content: center; align-items: center; margin-top: 50px;}
+.catagory-top a {color: #020c12; font-size: 12px; font-weight: 400; background: rgba(255, 106, 106, 1); width: 81px; height: 23px; border-radius: 4px; display: flex; justify-content: center; align-items: center; margin: auto;}
+.catagory-top h4 {font-size: 18px; line-height: 34px; font-weight: 700; margin: 0; padding-top: 8px;}
+.catagory-top p { font-size: 14px; line-height: 22px; font-weight: 400; color: #969ca3; padding-bottom: 10px; margin-top: 5px;}
+.catagory-grid {display: flex; align-items: center; justify-content: space-evenly; flex-wrap: wrap; margin: auto; width: 75%;}
+.catagory-grid .grid-img { width: 189.15px; height: 152.31px; border-radius: 10px; border: 1px solid rgba(187, 192, 198, 1); margin-bottom: 24px; display: flex;}
+.grid-one { background: url(./images/fundamental.png) no-repeat center;}
+.grid-two { background: url(./images/welding.png) no-repeat center;}
+.grid-three { background: url(./images/tig-welding.png) no-repeat center;}
+.grid-four {background: url(./images/weldingb.png) no-repeat center;}
+.grid-img p {font-size: 14px;line-height: 22px; font-weight: 400; color: #fff; display: flex; justify-content: center; align-items: flex-end; width: 100%;}
+.courses-grid {display: flex; width: 100%; flex-wrap: wrap; justify-content: space-evenly; align-items: center; margin: auto;}
+.c-grid { width: 160px; height: 223px; border-radius: 10px; border: 1px solid rgba(187, 192, 198, 1); margin-bottom: 24px; background: rgba(20, 30, 49, 1);}
+.c-grid h6 {font-size: 14px; line-height: 18px; font-weight: 700; text-align: left; margin: 0%; padding-top: 15px;}
+.c-grid p { text-align: left; margin: 0%; font-size: 12px; line-height: 18px; padding: 8px 4px 13px 0;}
+.c-grid a {font-size: 10px; color: #fff; font-weight: 700; background: linear-gradient(91.81deg, #ff0f00 1.76%, #ff6a6a 98.7%); width: 92px; height: 26px; border-radius: 4px; margin: 0;}
+.inner-grid {padding-left: 10px;}
+.inner-grid p { font-weight: 400; color: #969ca3;}
+.course-b a {width: 119px;}
+.catagory-top-b a { width: 126px;}
+.job-grid { background: rgba(20, 30, 49, 1); width: 254px; height: 92px; border-radius: 8px; border: 1.5px solid rgba(135, 151, 160, 1); margin-bottom: 24px; display: flex; align-items: center; justify-content: space-around;}
+.jobboard-grid {width: 100%;}
+.job-grid p {font-size: 12px; margin: 0; text-align: left; padding-bottom: 0%;}
+.job-grid h6 { margin: 0; text-align: left; font-size: 14px; line-height: 18px;}
+.global-post { width: 100%; display: flex;}
+.global-btn a { width: 94px;}
+.footer { display: flex; justify-content: space-around; align-items: center;}
+.footer-left p { color: rgba(150, 156, 163, 1); font-size: 12px; line-height: 18px; text-align: left; padding-left: 27px;}
+.footer-left { width: 56%;}
+.footer-right { display: flex; align-items: center; justify-content: flex-start; width: 44%; flex-wrap: wrap;}
+.footer-right p { color: rgba(150, 156, 163, 1); font-size: 14px; line-height: 22px; text-align: left; font-weight: 400; padding-top: 14px; padding-left: 10px; margin: 0;}
+.footer-icons { display: flex; justify-content: flex-start; align-items: center;}
+.footer-left img { padding-left: 27px;}
+hr { width: 536px; border: 1px solid rgba(20, 36, 50, 1);}
+.copywrite p { font-size: 14px; font-weight: 400; color: rgba(150, 156, 163, 1); padding: 5px 0 30px 0;}
+ul li { list-style: none; align-items: center;}
+ul li img { padding-top: 10px;}
     </style>
   </head>
-
+  
   <body style="margin: auto">
-    <div class="main-div">
-      <div class="banner-logo">
-        <img src="#" alt="" />
-      </div>
+    <center class="main-div">
+      <table style="width: 100%;">
+        <tr>
+          <td style="display: flex; justify-content: center; margin: auto; padding: 50px 0; ">
+            <img src="./images/weld.png" alt="" />
+          </td>
+        </tr>
+        <!-- Banner Section -->
+        <tr class="banner-img">
+          <td>
+            <h1>
+              Get the online courses <br /> and learn more
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />
+              sed do eiusmod tempor incididunt ut labore et dolore <br />
+              magna aliqua.
+            </p>
+            <a href="">DISCOVER NOW</a>
+          </td>
+        </tr>
+        <!-- Enroll Section -->
+        <table class="enroll-sec">
+          <tr class="course">
+            <td style="padding-right: 15px;">
+              <a href="">Best Course</a>
+              <h4>MIG Fundamentals</h4>
+              <p>
+                Impress employers with your best <br />
+                work, on the best domain for <br />
+                welders, Duis sit urna.
+              </p>
+              <a class="enroll" href="">Enroll Class</a>
+            </td>
+            <td class="enroll-img">
+              <a style="background: transparent; width: 100%;" href=""><img src="./images/play.png" alt="" /></a>
+            </td>
+          </tr>
+        </table>
+        <!-- Catagory Section -->
+        <table class="catagory-sec">
+          <tr style="display: flex; justify-content: center;" class="catagory-top">
+            <td>
+              <a href="">Categories</a>
+              <h4>Top Course Categories</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean
+                <br />
+                commo disconsectetuer adipiscing elit.Aenean.
+              </p>
+            </td>
+            <tr class="catagory-grid">
+              <td class="grid-img grid-one"><p>Fundamentals</p></td>
+              <td class="grid-img grid-two"><p>Mig Welding</p></td>
+              <td class="grid-img grid-three"><p>Tig Welding</p></td>
+              <td class="grid-img grid-four"><p>Welding</p></td>
+            </tr>
+          </tr>
+        </table>
+        <!-- Courses Section -->
+        <table class="catagory-sec">
+          <tr class="catagory-top">
+            <td>
+              <a href="">What's new</a>
+              <h4>My Courses</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean
+                <br />
+                commo disconsectetuer adipiscing elit.Aenean.
+              </p>
+            </td>
 
-      <div class="banner-img">
-        <h1>
-          Get the online courses <br />
-          and learn more
-        </h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />
-          sed do eiusmod tempor incididunt ut labore et dolore <br />
-          magna aliqua.
-        </p>
-        <a href="">DISCOVER NOW</a>
-      </div>
+            <table class="courses-grid">
+              <tbody style="display: flex; justify-content: space-evenly; align-items: center; flex-wrap: wrap; width: 100%; ">
+                <tr style="display: flex; flex-direction: column;" class="c-grid">
+                  <td style="display: flex; justify-content: center; padding-top: 5px">
+                    <img src="./images/mig.png" alt="" />
+                  </td>
+                  <td class="inner-grid">
+                    <h6>MIG Fundamentals</h6>
+                    <p>Impress employers with your best work.</p>
+                    <a style="padding: 7px 16px;" href="">View Course</a>
+                  </td>
+                </tr>
 
-      <div class="enroll-sec">
-        <div class="course">
-          <a href="">Best Course</a>
-          <h4>MIG Fundamentals</h4>
-          <p>
-            Impress employers with your best <br />
-            work, on the best domain for <br />
-            welders, Duis sit urna.
-          </p>
-          <a class="enroll" href="">Enroll Class</a>
-        </div>
+                <tr style="display: flex; flex-direction: column;" class="c-grid">
+                  <td style="display: flex; justify-content: center; padding-top: 5px">
+                    <img src="./images/tig-one.png" alt="" />
+                  </td>
+                  <td class="inner-grid">
+                    <h6>MIG Fundamentals</h6>
+                    <p>Impress employers with your best work.</p>
+                    <a style="padding: 7px 16px;" href="">View Course</a>
+                  </td>
+                </tr>
 
-        <div class="enroll-img">
-          <a href=""><img src="./images/play.png" alt="" /></a>
-        </div>
-      </div>
+                <tr style="display: flex; flex-direction: column;" class="c-grid">
+                  <td style="display: flex; justify-content: center; padding-top: 5px">
+                    <img src="./images/tig-two.png" alt="" />
+                  </td>
+                  <td class="inner-grid">
+                    <h6>MIG Fundamentals</h6>
+                    <p>Impress employers with your best work.</p>
+                    <a style="padding: 7px 16px;" href="">View Course</a>
+                  </td>
+                </tr>
 
-      <div class="catagory-sec">
-        <div class="catagory-top">
-          <a href="">Categories</a>
-          <h4>Top Course Categories</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean
-            <br />
-            commo disconsectetuer adipiscing elit.Aenean.
-          </p>
-          <div class="catagory-grid">
-            <div class="grid-img grid-one"><p>Fundamentals</p></div>
-            <div class="grid-img grid-two"><p>Mig Welding</p></div>
-            <div class="grid-img grid-three"><p>Tig Welding</p></div>
-            <div class="grid-img grid-four"><p>Welding</p></div>
-          </div>
-        </div>
-      </div>
+                <tr style="display: flex; flex-direction: column;" class="c-grid">
+                  <td style="display: flex; justify-content: center; padding-top: 5px">
+                    <img src="./images/mig-two.png" alt="" />
+                  </td>
+                  <td class="inner-grid">
+                    <h6>MIG Fundamentals</h6>
+                    <p>Impress employers with your best work.</p>
+                    <a style="padding: 7px 16px;" href="">View Course</a>
+                  </td>
+                </tr>
 
-      <div class="catagory-sec">
-        <div class="catagory-top">
-          <a href="">What's new</a>
-          <h4>My Courses</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean
-            <br />
-            commo disconsectetuer adipiscing elit.Aenean.
-          </p>
+                <tr style="display: flex; flex-direction: column;" class="c-grid">
+                  <td style="display: flex; justify-content: center; padding-top: 5px">
+                    <img src="./images/tig-three.png" alt="" />
+                  </td>
+                  <td class="inner-grid">
+                    <h6>MIG Fundamentals</h6>
+                    <p>Impress employers with your best work.</p>
+                    <a style="padding: 7px 16px;" href="">View Course</a>
+                  </td>
+                </tr>
 
-          <div class="courses-grid">
-            <div class="c-grid">
-              <div
-                style="display: flex; justify-content: center; padding-top: 5px"
-              >
-                <img src="./images/mig.png" alt="" />
-              </div>
-              <div class="inner-grid">
-                <h6>MIG Fundamentals</h6>
-                <p>Impress employers with your best work.</p>
-                <a href="">View Course</a>
-              </div>
-            </div>
-
-            <div class="c-grid">
-              <div
-                style="display: flex; justify-content: center; padding-top: 5px"
-              >
-                <img src="./images/tig-one.png" alt="" />
-              </div>
-              <div class="inner-grid">
-                <h6>TIG Fundamentals</h6>
-                <p>Impress employers with your best work.</p>
-                <a href="">View Course</a>
-              </div>
-            </div>
-            <div class="c-grid">
-              <div
-                style="display: flex; justify-content: center; padding-top: 5px"
-              >
-                <img src="./images/tig-two.png" alt="" />
-              </div>
-              <div class="inner-grid">
-                <h6>TIG Fundamentals</h6>
-                <p>Impress employers with your best work.</p>
-                <a href="">View Course</a>
-              </div>
-            </div>
-            <div class="c-grid">
-              <div
-                style="display: flex; justify-content: center; padding-top: 5px"
-              >
-                <img src="./images/mig-two.png" alt="" />
-              </div>
-              <div class="inner-grid">
-                <h6>MIG Fundamentals</h6>
-                <p>Impress employers with your best work.</p>
-                <a href="">View Course</a>
-              </div>
-            </div>
-            <div class="c-grid">
-              <div
-                style="display: flex; justify-content: center; padding-top: 5px"
-              >
-                <img src="./images/tig-three.png" alt="" />
-              </div>
-              <div class="inner-grid">
-                <h6>TIG Fundamentals</h6>
-                <p>Impress employers with your best work.</p>
-                <a href="">View Course</a>
-              </div>
-            </div>
-            <div class="c-grid">
-              <div
-                style="display: flex; justify-content: center; padding-top: 5px"
-              >
-                <img src="./images/mig-three.png" alt="" />
-              </div>
-              <div class="inner-grid">
-                <h6>MIG Fundamentals</h6>
-                <p>Impress employers with your best work.</p>
-                <a href="">View Course</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="enroll-sec">
-        <div class="course course-b">
-          <a href="">Best Part of Weld</a>
-          <h4>Certificate for Completion</h4>
-          <p>
-            Impress employers with your best <br />
-            work, on the best domain for <br />
-            welders, Duis sit urna.
-          </p>
-          <a class="enroll" href="">Enroll Class</a>
-        </div>
-        <div class="enroll-img-b"></div>
-      </div>
-
-      <div class="catagory-sec">
-        <div class="catagory-top catagory-top-b">
-          <a href="">New Opportunities</a>
-          <h4>Job Board</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean
-            <br />
-            commo disconsectetuer adipiscing elit.Aenean.
-          </p>
-
-          <div class="catagory-grid jobboard-grid">
-            <div class="job-grid">
-              <div>
-                <img src="./images/job-icon-1.png" alt="" />
-              </div>
-              <div>
-                <h6>Fundamentals Instructor</h6>
-                <p>Weld . Chicago, NY</p>
-                <p>$2500/mo</p>
-              </div>
-            </div>
-
-            <div class="job-grid">
-              <div>
-                <img src="./images/job-icon-2.png" alt="" />
-              </div>
-              <div>
-                <h6>Mid-level Instructor</h6>
-                <p>Weld . Mesa, New Jersey</p>
-                <p>$1500/mo</p>
-              </div>
-            </div>
-            <div class="job-grid">
-              <div>
-                <img src="./images/job-icon-3.png" alt="" />
-              </div>
-              <div>
-                <h6>Junior Instructor</h6>
-                <p>Weld . Chicago, NY</p>
-                <p>$2500/mo</p>
-              </div>
-            </div>
-            <div class="job-grid">
-              <div>
-                <img src="./images/job-icon-1.png" alt="" />
-              </div>
-              <div>
-                <h6>Mid-Level Instructor</h6>
-                <p>Weld . Mesa, New Jersey</p>
-                <p>$2500/mo</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="catagory-sec">
-        <div class="catagory-top global-btn">
-          <a href="">Latest News</a>
-          <h4>Global Post</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean
-            <br />
-            commo disconsectetuer adipiscing elit.Aenean.
-          </p>
-          <div class="catagory-grid global-post">
-            <div class="global-grid">
-              <div class="global-img">
-                <img src="./images/post-1.png" alt="" />
-              </div>
-              <div class="global-add">
-                <p>By Olivia Samantha</p>
-                <p>March 01, 2022</p>
-              </div>
-              <div class="global-text">
-                <h6>Believe in yourself!</h6>
+                <tr style="display: flex; flex-direction: column;" class="c-grid">
+                  <td style="display: flex; justify-content: center; padding-top: 5px">
+                    <img src="./images/mig-three.png" alt="" />
+                  </td>
+                  <td class="inner-grid">
+                    <h6>MIG Fundamentals</h6>
+                    <p>Impress employers with your best work.</p>
+                    <a style="padding: 7px 16px;" href="">View Course</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </tr>
+        </table>
+        <!-- Certificate Section -->
+        <table class="enroll-sec">
+          <tbody class="course course-b">
+            <tr>
+              <td style="padding-right: 15px;">
+                <a href="">Best Part of Weld</a>
+                <h4>Certificate for Completion</h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit.
-                  Curabitur placerat tellus<br />sit amet ipsum
-                  ornare.Curabitur.
+                  Impress employers with your best <br />
+                  work, on the best domain for <br />
+                  welders, Duis sit urna.
                 </p>
-                <a href="">Read More</a>
-              </div>
-            </div>
-
-            <div class="global-grid">
-              <div class="global-img">
-                <img src="./images/post-2.png" alt="" />
-              </div>
-              <div class="global-add">
-                <p>By Olivia Samantha</p>
-                <p>March 01, 2022</p>
-              </div>
-              <div class="global-text">
-                <h6>Building an excellence.</h6>
+                <a class="enroll" href="">Enroll Class</a>
+              </td>
+              <td style="background: url(./images/certificate.png) no-repeat center; width: 280px; height: 248px; border-radius: 12px; border: 1px solid #bbc0c6;"></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Job Board Section -->
+        <table class="catagory-sec">
+            <tr class="catagory-top catagory-top-b">
+              <td>
+                <a href="">New Opportunities</a>
+                <h4>Job Board</h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit.
-                  Curabitur placerat tellus<br />sit amet ipsum
-                  ornare.Curabitur.
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean
+                  <br />
+                  commo disconsectetuer adipiscing elit.Aenean.
                 </p>
-                <a href="">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              </td>
+            </tr>
 
-      <div class="go-big">
-        <div>
-          <h4>Go Big on Tig!</h4>
-          <p>
-            Impress employers with your best work,<br />on the best domain for
-            welders.
-          </p>
-        </div>
-        <div class="go-view">
-          <a href="">View Course</a>
-        </div>
-      </div>
+            <table class="catagory-grid jobboard-grid">
+              <tbody style="display: flex; flex-wrap: wrap; justify-content: space-evenly; align-items: center;">
+                <tr class="job-grid">
+                  <td>
+                    <img src="./images/job-icon-1.png" alt="" />
+                  </td>
+                  <td>
+                    <h6>Fundamentals Instructor</h6>
+                    <p style="line-height: 22px; font-weight: 400; color: #969ca3;">Weld . Chicago, NY</p>
+                    <p style="line-height: 22px; font-weight: 400; color: #969ca3;">$2500/mo</p>
+                  </td>
+                </tr>
 
-      <div class="footer">
-        <div class="footer-left">
-          <img src="#" alt="" />
-          <p>
-            Sed ut perspiciatis unde omnis iste <br />
-            natus error sit voluptatem accusantium <br />
-            doloremque laudantium, totam rem <br />
-            aperiam,
-          </p>
-        </div>
+                <tr class="job-grid">
+                  <td>
+                    <img src="./images/job-icon-2.png" alt="" />
+                  </td>
+                  <td>
+                    <h6>Fundamentals Instructor</h6>
+                    <p style="line-height: 22px; font-weight: 400; color: #969ca3;">Weld . Chicago, NY</p>
+                    <p style="line-height: 22px; font-weight: 400; color: #969ca3;">$2500/mo</p>
+                  </td>
+                </tr>
 
-        <div class="footer-right">
-          <div class="footer-icons">
-            <div><img src="./images/location.png" alt="" /></div>
-            <div>
-              <p>United States<br />New York City</p>
-            </div>
-          </div>
-          <div class="footer-icons">
-            <div style="padding-top: 14px">
-              <img src="./images/Phone.png" alt="" />
-            </div>
-            <div>
-              <a href=""><p>123-456-789000</p></a>
-            </div>
-          </div>
-          <div class="footer-icons">
-            <div style="padding-top: 14px">
-              <img src="./images/sms.png" alt="" />
-            </div>
-            <div>
-              <a href=""
-                ><p>Info@abcd.com<br /></p
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <hr />
-      </div>
+                <tr class="job-grid">
+                  <td>
+                    <img src="./images/job-icon-3.png" alt="" />
+                  </td>
+                  <td>
+                    <h6>Fundamentals Instructor</h6>
+                    <p style="line-height: 22px; font-weight: 400; color: #969ca3;">Weld . Chicago, NY</p>
+                    <p style="line-height: 22px; font-weight: 400; color: #969ca3;">$2500/mo</p>
+                  </td>
+                </tr>
 
-      <div class="copywrite">
-        <p>Copyright © 2022 Weld. All Rights Reserved.</p>
-      </div>
-    </div>
+                <tr class="job-grid">
+                  <td>
+                    <img src="./images/job-icon-1.png" alt="" />
+                  </td>
+                  <td>
+                    <h6>Fundamentals Instructor</h6>
+                    <p style="line-height: 22px; font-weight: 400; color: #969ca3;">Weld . Chicago, NY</p>
+                    <p style="line-height: 22px; font-weight: 400; color: #969ca3;">$2500/mo</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </table>
+        <!-- Latest News Section -->
+        <table class="catagory-sec">
+          <tbody class="catagory-top global-btn">
+            <tr>
+              <td>
+                <a href="">Latest News</a>
+                <h4>Global Post</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean
+                  <br />
+                  commo disconsectetuer adipiscing elit.Aenean.
+                </p>
+              </td>
+            </tr>
+          </tbody>
+
+          <table>
+            <tbody class="catagory-grid global-post">
+              <tr style="width: 254px; height: 306px; border-radius: 10px; background: rgba(20, 30, 49, 1); border: 1px solid rgba(187, 192, 198, 1); margin: 0 10px 0 10px;">
+                <td style="display: flex; justify-content: center; align-items: center;">
+                  <img style="padding-top: 5px;" src="./images/post-1.png" alt="" />
+                </td>
+                <td style="display: flex; justify-content: space-between; padding: 0 14px;">
+                  <p style="font-size: 10px; margin: 0; padding-top: 8px; padding-bottom: 10px; color: #969ca3; line-height: 22px; font-weight: 400;">By Olivia Samantha</p>
+                  <p style="font-size: 10px; margin: 0; padding-top: 8px; padding-bottom: 10px; color: #969ca3; line-height: 22px; font-weight: 400;">March 01, 2022</p>
+                </td>
+
+                <td>
+                  <h6 style="margin: 0; text-align: left; padding: 0 14px; font-size: 14px; line-height: 18px; font-weight: 700; padding-bottom: 13px;">Believe in yourself!</h6>
+                  <p style="margin: 0; text-align: left; padding: 0 14px; font-size: 12px; line-height: 18px; color: rgba(150, 156, 163, 1);">
+                    Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit.
+                    Curabitur placerat tellus<br />sit amet ipsum
+                    ornare.Curabitur.
+                  </p>
+                  <a style="font-weight: 700; font-size: 12px; line-height: 14px; background: none; color: #ff0f00; text-align: left; margin: 0 5px;  padding-top: 18px; padding-left: 10px; display: flex;" href="">Read More</a>
+                </td>
+              </tr>
+
+              <tr style="width: 254px; height: 306px; border-radius: 10px; background: rgba(20, 30, 49, 1); border: 1px solid rgba(187, 192, 198, 1); margin: 0 10px 0 10px;">
+                <td style="display: flex; justify-content: center; align-items: center;">
+                  <img style="padding-top: 5px;" src="./images/post-2.png" alt="" />
+                </td>
+                <td style="display: flex; justify-content: space-between; padding: 0 14px;">
+                  <p style="font-size: 10px; margin: 0; padding-top: 8px; padding-bottom: 10px; color: #969ca3; line-height: 22px; font-weight: 400;">By Olivia Samantha</p>
+                  <p style="font-size: 10px; margin: 0; padding-top: 8px; padding-bottom: 10px; color: #969ca3; line-height: 22px; font-weight: 400;">March 01, 2022</p>
+                </td>
+
+                <td>
+                  <h6 style="margin: 0; text-align: left; padding: 0 14px; font-size: 14px; line-height: 18px; font-weight: 700; padding-bottom: 13px;">Believe in yourself!</h6>
+                  <p style="margin: 0; text-align: left; padding: 0 14px; font-size: 12px; line-height: 18px; color: rgba(150, 156, 163, 1);">
+                    Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit.
+                    Curabitur placerat tellus<br />sit amet ipsum
+                    ornare.Curabitur.
+                  </p>
+                  <a style="font-weight: 700; font-size: 12px; line-height: 14px; background: none; color: #ff0f00; text-align: left; margin: 0 5px;  padding-top: 18px; padding-left: 10px; display: flex;" href="">Read More</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </table>
+        <!-- Go Big Section -->
+        <table>
+          <tr style="width: 536px; height: 138px; border-radius: 16px; background: rgba(20, 30, 49, 1); border: 1px solid rgba(187, 192, 198, 1); display: flex; justify-content: space-around; align-items: center; margin: 40px auto;">
+            <td>
+              <h4 style="text-align: left;">Go Big on Tig!</h4>
+              <p style="text-align: left; font-size: 14px; color: rgba(187, 192, 198, 1);-height: 22px; ">
+                Impress employers with your best work,<br />on the best domain for
+                welders.
+              </p>
+            </td>
+            <td>
+              <a style="font-size: 14px; font-weight: 700; line-height: 16px; width: 162px; height: 44px; border-radius: 10px; display: flex; justify-content: center; align-items: center; background: linear-gradient(91.81deg, #ff0f00 1.76%, #ff6a6a 98.7%); " href="">View Course</a>
+            </td>
+          </tr>
+        </table>
+        <!-- Footer Section -->
+        <table>
+          <tbody class="footer">
+            <tr class="footer-left">
+              <td>
+                <img src="./images/footer-logo.png" alt="" />
+                <p>
+                  Sed ut perspiciatis unde omnis iste <br />
+                  natus error sit voluptatem accusantium <br />
+                  doloremque laudantium, totam rem <br />
+                  aperiam,
+                </p>
+              </td>
+            </tr>
+
+            <tr class="footer-right">
+              <td style="width: 100%;" class="footer-icons">
+                <ul style="display: flex; justify-content: center; align-items: center; padding-left: 0; margin: 0;">
+                  <li><img src="./images/location.png" alt="" /></li>
+                  <li><p>Company Name 1234 Street<br />Stage Post 1234</p></li>
+                </ul>
+              </td>
+              
+              <td style="width: 100%;" class="footer-icons">
+                <ul style="display: flex; justify-content: center; align-items: center; padding-left: 0; margin: 0;">
+                  <li><img src="./images/Phone.png" alt="" /></li>
+                  <li><a href=""><p>001-1234-5678</p></a></li>
+                </ul>
+              </td>
+     
+              <td style="width: 100%;" class="footer-icons">
+                <ul style="display: flex; justify-content: center; align-items: center; padding-left: 0; margin: 0;">
+                  <li><img src="./images/sms.png" alt="" /></li>
+                  <li><a href="" ><p>Info@weld.com<br /></p></a></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <tr>
+          <td>
+              <hr>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p style="font-size: 14px; font-weight: 400; color: rgba(150, 156, 163, 1); padding: 5px 0 30px 0;">Copyright © 2022 Weld. All Rights Reserved.</p>
+          </td>
+        </tr>
+      </table>
+    </center>
   </body>
 </html>
